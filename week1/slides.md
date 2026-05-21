@@ -13,27 +13,27 @@ math: katex
 
 ## Why Sobolev Spaces?
 
-Classical derivatives are sometimes too restrictive.
+Classical differentiability is often too restrictive for real PDE solutions.
 
-Sobolev spaces let us work with functions that may have corners or rough
-features, while still controlling their derivatives in an integral sense.
-
----
-
-## From Smoothness to Energy
-
-Instead of asking whether derivatives exist at every point, Sobolev spaces ask
-whether derivatives are integrable.
-
-For many PDE models, the natural quantity is an energy such as:
-
-$$
-\int_\Omega |\nabla u|^2\,dx
-$$
+Sobolev spaces keep the useful idea of derivatives, but measure them through
+integral norms rather than pointwise smoothness.
 
 ---
 
-## The Space \(H^1(\Omega)\)
+## Smoothness as a Norm
+
+A Sobolev norm measures a function together with its weak derivatives.
+
+For example, the $H^1$ norm controls both $u$ and its gradient:
+
+$$
+\|u\|_{H^1(\Omega)}^2
+= \int_\Omega |u|^2\,dx + \int_\Omega |\nabla u|^2\,dx
+$$
+
+---
+
+## The Space $H^1(\Omega)$
 
 For a domain $\Omega \subset \mathbb{R}^n$, the space $H^1(\Omega)$ contains
 functions whose values and first weak derivatives are square-integrable:
@@ -47,7 +47,8 @@ $$
 
 ## Weak Derivatives
 
-A function $v$ is the weak derivative of $u$ in the $i$th direction if:
+A function $v$ is the weak derivative of $u$ in the $i$th direction when the
+integration-by-parts identity holds:
 
 $$
 \int_\Omega u\,D_i\varphi\,dx
@@ -60,7 +61,7 @@ for every smooth compactly supported test function $\varphi$.
 
 ## General Sobolev Spaces
 
-Sobolev spaces are usually written as $W^{k,p}(\Omega)$.
+The notation $W^{k,p}(\Omega)$ records two pieces of information:
 
 - $k$ counts the number of weak derivatives
 - $p$ sets the integrability scale
@@ -83,6 +84,19 @@ Sobolev spaces are the natural language for:
 - boundary traces and regularity theory
 
 They balance roughness with enough structure for analysis.
+
+---
+
+## Example Intuition
+
+A function can fail to be classically differentiable at a point and still
+belong to a Sobolev space.
+
+The space cares about averaged behavior, not perfect pointwise smoothness.
+
+$$
+\int_\Omega |\nabla u|^2\,dx < \infty
+$$
 
 ---
 
