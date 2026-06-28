@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "zotero": {
+      "command": "/home/agizz/.local/bin/zotero-mcp",
+      "env": {
+        "ZOTERO_LOCAL": "true"
+      }
+    }
+  }
+}
